@@ -12,7 +12,7 @@ public class Sailboat
     private int id;
     private String boatType;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "sailRacing")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "sailboat")
     private Set<SailRacingParticipant> sailRacingParticipant;
 
     public int getId()
