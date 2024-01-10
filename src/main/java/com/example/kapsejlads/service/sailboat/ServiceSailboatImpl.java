@@ -1,7 +1,8 @@
-package com.example.kapsejlads.service;
+package com.example.kapsejlads.service.sailboat;
 
 import com.example.kapsejlads.model.Sailboat;
 import com.example.kapsejlads.repository.SailboatRepo;
+import com.example.kapsejlads.service.sailboat.ServiceSailboat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

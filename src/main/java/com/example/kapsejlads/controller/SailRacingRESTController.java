@@ -1,7 +1,7 @@
 package com.example.kapsejlads.controller;
 
-import com.example.kapsejlads.model.Sailboat;
-import com.example.kapsejlads.service.sailboat.ServiceSailboat;
+import com.example.kapsejlads.model.SailRacingParticipant;
+import com.example.kapsejlads.service.sailracingparticipants.ServiceSailRacingParticipants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,23 +10,24 @@ import java.util.List;
 
 @RestController
 @CrossOrigin
-public class RESTController
+public class SailRacingRESTController
 {
-
     @Autowired
-    private ServiceSailboat serviceSailboat;
+    private ServiceSailRacingParticipants serviceSailRacingParticipants;
 
-    @GetMapping("/allboats")
-    public List<Sailboat> getAllBoats()
+    @GetMapping("/allsailracingparticipants")
+    public List<SailRacingParticipant> getAllSailRacing()
     {
-        return serviceSailboat.findAllSailboats();
+        return serviceSailRacingParticipants.findAllSailRacings();
     }
 
+/*
     @PostMapping("/newsailboat")
-    public ResponseEntity<Sailboat> createOneSailboat(@RequestBody Sailboat sailboat)
+    public ResponseEntity<SailRacingParticipant> createSailRacingParticipant(@RequestBody SailRacingParticipant sailRacingParticipant)
     {
         return serviceSailboat.saveSailboat(sailboat);
     }
+
 
     @PutMapping("/sailboat/{id}")
     public ResponseEntity<Sailboat> updateSailboat(@PathVariable int id, @RequestBody Sailboat sailboat)
@@ -38,5 +39,5 @@ public class RESTController
     public ResponseEntity<String> deleteSailboat(@PathVariable int id)
     {
         return serviceSailboat.deleteSailboat(id);
-    }
+    }*/
 }

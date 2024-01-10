@@ -1,6 +1,8 @@
 package com.example.kapsejlads;
 
+import com.example.kapsejlads.model.SailRacingDate;
 import com.example.kapsejlads.model.Sailboat;
+import com.example.kapsejlads.repository.SailRacingDateRepo;
 import com.example.kapsejlads.repository.SailboatRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -12,6 +14,9 @@ public class InitData implements CommandLineRunner
 
     @Autowired
     private SailboatRepo sailboatRepo;
+
+    @Autowired
+    private SailRacingDateRepo sailRacingDateRepo;
 
     @Override
     public void run(String... args) throws Exception
@@ -27,6 +32,11 @@ public class InitData implements CommandLineRunner
         Sailboat smallBoat = new Sailboat();
         smallBoat.setBoatType("25foot-");
         sailboatRepo.save(smallBoat);
+
+        SailRacingDate sailRacingDate = new SailRacingDate();
+        sailRacingDate.setDate("22-04-2024");
+        sailRacingDateRepo.save(sailRacingDate);
+
     }
 
 

@@ -11,8 +11,8 @@ public class Sailboat
     private String boatType;
 
     @ManyToOne
-    @JoinColumn(name = "sailRacing", referencedColumnName = "id")
-    private SailRacing sailRacing;
+    @JoinColumn(name = "sailRacingParticipant", referencedColumnName = "id")
+    private SailRacingParticipant sailRacingParticipant;
 
     public int getId()
     {

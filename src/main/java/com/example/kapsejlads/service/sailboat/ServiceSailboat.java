@@ -1,4 +1,4 @@
-package com.example.kapsejlads.service;
+package com.example.kapsejlads.service.sailboat;
 
 import com.example.kapsejlads.model.Sailboat;
 import org.springframework.http.ResponseEntity;
