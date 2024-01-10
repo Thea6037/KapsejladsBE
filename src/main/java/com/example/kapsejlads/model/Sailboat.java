@@ -10,6 +10,10 @@ public class Sailboat
     private int id;
     private String boatType;
 
+    @ManyToOne
+    @JoinColumn(name = "sailRacing", referencedColumnName = "id")
+    private SailRacing sailRacing;
+
     public int getId()
     {
         return id;
