@@ -2,6 +2,8 @@ package com.example.kapsejlads.model;
 
 import jakarta.persistence.*;
 
+import java.util.Set;
+
 @Entity
 public class SailRacingDate
 {
@@ -10,9 +12,8 @@ public class SailRacingDate
     private int id;
     private String date;
 
-    @ManyToOne
-    @JoinColumn(name = "sailRacingParticipant", referencedColumnName = "id")
-    private SailRacingParticipant sailRacingParticipant;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "sailRacingDate")
+    private Set<SailRacingParticipant> sailRacingParticipant;
 
     public int getId()
     {
@@ -34,12 +35,12 @@ public class SailRacingDate
         this.date = date;
     }
 
-    public SailRacingParticipant getSailRacing()
+    public Set<SailRacingParticipant> getSailRacingParticipant()
     {
         return sailRacingParticipant;
     }
 
-    public void setSailRacing(SailRacingParticipant sailRacingParticipant)
+    public void setSailRacingParticipant(Set<SailRacingParticipant> sailRacingParticipant)
     {
         this.sailRacingParticipant = sailRacingParticipant;
     }

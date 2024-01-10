@@ -12,11 +12,13 @@ public class SailRacingParticipant
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "sailRacingParticipant")
-    private Set<SailRacingDate> sailRacingDate;
+    @ManyToOne
+    @JoinColumn(name = "sailRacingDate", referencedColumnName = "id")
+    private SailRacingDate sailRacingDate;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "sailRacingParticipant")
-    private Set<Sailboat> sailboat;
+    @ManyToOne
+    @JoinColumn(name = "sailboat", referencedColumnName = "id")
+    private Sailboat sailboat;
 
     private int points;
 
@@ -30,25 +32,6 @@ public class SailRacingParticipant
         this.id = id;
     }
 
-    public Set<SailRacingDate> getSailRacingDate()
-    {
-        return sailRacingDate;
-    }
-
-    public void setSailRacingDate(Set<SailRacingDate> sailRacingDate)
-    {
-        this.sailRacingDate = sailRacingDate;
-    }
-
-    public Set<Sailboat> getSailboat()
-    {
-        return sailboat;
-    }
-
-    public void setSailboat(Set<Sailboat> sailboat)
-    {
-        this.sailboat = sailboat;
-    }
 
     public int getPoints()
     {
@@ -58,5 +41,25 @@ public class SailRacingParticipant
     public void setPoints(int points)
     {
         this.points = points;
+    }
+
+    public SailRacingDate getSailRacingDate()
+    {
+        return sailRacingDate;
+    }
+
+    public void setSailRacingDate(SailRacingDate sailRacingDate)
+    {
+        this.sailRacingDate = sailRacingDate;
+    }
+
+    public Sailboat getSailboat()
+    {
+        return sailboat;
+    }
+
+    public void setSailboat(Sailboat sailboat)
+    {
+        this.sailboat = sailboat;
     }
 }

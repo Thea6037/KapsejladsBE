@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin
-public class SailRacingRESTController
+public class SailRacingParticipantRESTController
 {
     @Autowired
     private ServiceSailRacingParticipants serviceSailRacingParticipants;
@@ -21,14 +21,14 @@ public class SailRacingRESTController
         return serviceSailRacingParticipants.findAllSailRacings();
     }
 
-/*
-    @PostMapping("/newsailboat")
+
+    @PostMapping("/newparticipant")
     public ResponseEntity<SailRacingParticipant> createSailRacingParticipant(@RequestBody SailRacingParticipant sailRacingParticipant)
     {
-        return serviceSailboat.saveSailboat(sailboat);
+        return serviceSailRacingParticipants.saveSailRacingParticipant(sailRacingParticipant);
     }
 
-
+/*
     @PutMapping("/sailboat/{id}")
     public ResponseEntity<Sailboat> updateSailboat(@PathVariable int id, @RequestBody Sailboat sailboat)
     {

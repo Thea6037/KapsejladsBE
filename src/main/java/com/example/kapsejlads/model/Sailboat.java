@@ -2,6 +2,8 @@ package com.example.kapsejlads.model;
 
 import jakarta.persistence.*;
 
+import java.util.Set;
+
 @Entity
 public class Sailboat
 {
@@ -10,9 +12,8 @@ public class Sailboat
     private int id;
     private String boatType;
 
-    @ManyToOne
-    @JoinColumn(name = "sailRacingParticipant", referencedColumnName = "id")
-    private SailRacingParticipant sailRacingParticipant;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "sailRacing")
+    private Set<SailRacingParticipant> sailRacingParticipant;
 
     public int getId()
     {
@@ -21,8 +22,7 @@ public class Sailboat
 
     public void setId(int id)
     {
-        this.id = id;
-    }
+        this.id = id;  }
 
     public String getBoatType()
     {
@@ -32,5 +32,15 @@ public class Sailboat
     public void setBoatType(String boatType)
     {
         this.boatType = boatType;
+    }
+
+    public Set<SailRacingParticipant> getSailRacingParticipant()
+    {
+        return sailRacingParticipant;
+    }
+
+    public void setSailRacingParticipant(Set<SailRacingParticipant> sailRacingParticipant)
+    {
+        this.sailRacingParticipant = sailRacingParticipant;
     }
 }
